@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private Text _currentPlayerLabel;
+
     public Sprite X; // Спрайт крестика
     public Sprite O; // Спрайт  нолика
 
@@ -17,6 +20,7 @@ public class GameController : MonoBehaviour
 
     public void NextPlayer()
     {
-        CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
+        CurrentPlayer = CurrentPlayer == 1 ? 2 : 1;
+        _currentPlayerLabel.text = CurrentPlayer == 1 ? "Ходит первый игрок" : "Ходит второй игрок";
     }
 }
